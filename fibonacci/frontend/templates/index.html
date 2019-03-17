@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static "fibo/style.css" %}">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+
+  <script src="{% static "fibo/calculate.js" %}">
+  </script>
+
+  <title>Fibonacci calculator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron col-md-8 col-sm-12 shadow-all text-center centered vertical-center">
+      <h1 style="font-size:2em;"><u>Fibonacci Number Calculator</u></h1>
+      <br>
+      <div class="container-fluid">
+        <form id="fiboform">
+          <div class="container-fluid">
+            <label for="number">Enter N to get the Nth Fibonacci number</label>
+            <input id="number" type="number" name="number" max="10000" min="1">
+          </div>
+          <div class="container-fluid">
+            <input id="calculate" class="btn btn-lg btn-info col-lg-4 col-md-6 col-sm-12" type="submit" name="" value="Calculate">
+          </div>
+        </form>
+      </div>
+
+
+      <div class="container-fluid">
+        <br>
+        <p id="fibo_output"></p>
+        <p id="time_req"></p>
+      </div>
+    </div>
+    <h3 id="url" hidden>{{ request.build_absolute_uri }}</h3>
+  </div>
+
+
+
+</body>
+</html>
